@@ -64,9 +64,6 @@ export default {
                       <a-menu-item onClick={() => this.editRecipe(val.record)}>
                         <span>编辑</span>
                       </a-menu-item>
-                      <a-menu-item onClick={() => this.editRecipe(val.record, 'publish')}>
-                        <span v-html={val.record.isPublished ? '取消发布' : '发布'}></span>
-                      </a-menu-item>
                       <a-menu-item onClick={() => this.editRecipe(val.record, 'del')}>
                         <span>删除</span>
                       </a-menu-item>
@@ -90,11 +87,16 @@ export default {
       console.log(formState)
       let dataSource = this.dataSource
       if (formState.id) {
-        dataSource.forEach((e, i) => {
-          if (e.id == formState.id) {
-            dataSource[i] = formState
-          }
-        })
+        if (formState.isDeleted) {
+          dataSource = dataSource.filter(e => e.id != formState.id)
+        } else {
+          dataSource.forEach((e, i) => {
+            if (e.id == formState.id) {
+              dataSource[i] = formState
+            }
+          })
+        }
+        
       } else {
         let id = +dataSource[dataSource.length - 1].id + 1
         formState.id = id
