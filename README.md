@@ -1,4 +1,3 @@
-# giga-admin
 
 ## Project setup
 ```
