@@ -3,24 +3,36 @@
     <div class="operations">
       <div style="flex: 1"></div>
     </div>
-    <div style="margin-bottom: 30px">
-      <a-card hoverable style="width: 300px">
-        <a-card-meta title="Admin" description="超级管理员">
-          <template #avatar>
-            <a-avatar :size="48" src="/pic.jpg" />
-          </template>
-        </a-card-meta>
-        <a-card-meta style="border-top: 1px solid #f0f0f0;margin-top:10px;padding-top:10px">
-          <template #description>
-            <p>上次登录时间：2022-5-29</p>
-            <p>上次登录地点：南京</p>
-          </template>
-        </a-card-meta>
-      </a-card>
-      <a-card size="small" title="正常和异常的机床总比例" style="width: 300px;margin-top: 20px">
-        <p>正常机床 <a-progress :percent="100" status="active" /></p>
-        <p>异常机床 <a-progress :percent="0" /></p>
-      </a-card>
+    <div style="margin-bottom: 30px;display: flex;align-items: center;">
+      <div>
+        <a-card hoverable style="width: 300px">
+          <a-card-meta title="Admin" description="超级管理员">
+            <template #avatar>
+              <a-avatar :size="48" src="/pic.jpg" />
+            </template>
+          </a-card-meta>
+          <a-card-meta style="border-top: 1px solid #f0f0f0;margin-top:10px;padding-top:10px">
+            <template #description>
+              <p>上次登录时间：2022-5-29</p>
+              <p>上次登录地点：南京</p>
+            </template>
+          </a-card-meta>
+        </a-card>
+        <a-card size="small" title="正常和异常的机床总比例" style="width: 300px;margin-top: 20px">
+          <p>正常机床 <a-progress :percent="100" status="active" /></p>
+          <p>异常机床 <a-progress :percent="0" /></p>
+        </a-card>
+      </div>
+      <div style="flex:1;display: flex;align-items: center;margin-left:20px;height: 300px">
+        <div style="width: 50%;display: flex;flex-direction: column;justify-content: space-between;height:300px">
+          <img src="@/assets/img1.png" alt="" style="width: 100%">
+          <p style="text-align: center;margin-top: 10px!important">目标函数值收敛情况</p>
+        </div>
+        <div style="width: 50%;display: flex;flex-direction: column;justify-content: space-between;height:300px">
+          <img src="@/assets/img2.png" alt="" style="width: 100%">
+          <p style="text-align: center;margin-top: 10px!important">t-SNE特征可视化</p>
+        </div>
+      </div>
     </div>
     <TiyoTable :gData="dataSource" :gColumns="columns" />
   </div>
