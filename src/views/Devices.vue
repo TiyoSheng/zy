@@ -43,7 +43,17 @@ export default {
         {
           title: '状态',
           dataIndex: 'status',
-          key: 'status'
+          key: 'status',
+          customRender: val => {
+            return <div>
+            {
+              val.value == '加工' ? <span style="background: #3f9315;padding: 4px 2px;text-align: center;color: #fff;font-size:12px;border-radius:2px">{val.value}</span> :
+              (val.value == '空闲' || val.value == '关机') ? <span style="background: #767676;padding: 4px 2px;text-align: center;color: #fff;font-size:12px;border-radius:2px">{val.value}</span> :
+              val.value == '故障' ? <span style="background: #ff4d4f;padding: 4px 2px;text-align: center;color: #fff;font-size:12px;border-radius:2px">{val.value}</span> : ''
+
+            }</div>
+            // 
+          }
         },
         {
           title: '备注',

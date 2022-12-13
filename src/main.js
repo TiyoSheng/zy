@@ -1,13 +1,18 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
-import { Button, message, Layout, Menu, Breadcrumb, Table, Modal, Form, Input, Upload, Tooltip, Select, Dropdown, Image, Popconfirm, Typography, Divider, Progress, DatePicker } from 'ant-design-vue';
+import { Button, message, Layout, Menu, Breadcrumb, Table, Modal, Form, Input, Upload, Tooltip, Select, Dropdown, Image, Popconfirm, Typography, Divider, Progress, DatePicker,
+  Card, Tabs, Radio, Avatar } from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.less';
 import { MessageOutlined, PlusOutlined, LoadingOutlined, HomeOutlined, BarsOutlined, CarOutlined, ProjectOutlined, TrademarkOutlined, InboxOutlined, ShoppingOutlined, BookOutlined, MinusCircleOutlined, UserOutlined, SyncOutlined } from '@ant-design/icons-vue';
 const app = createApp(App);
 
 app
+  .use(Radio)
+  .use(Avatar)
   .use(Button)
+  .use(Card)
+  .use(Tabs)
   .use(DatePicker)
   .use(Progress)
   .use(Layout)

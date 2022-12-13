@@ -2,7 +2,6 @@
   <div>
     <div class="operations">
       <div style="flex: 1"></div>
-      <a-button @click="addVehicleBrandVisible = true">添加</a-button>
     </div>
     <TiyoTable :gData="dataSource" :gColumns="columns" :gInnerColumns="innerColumns" />
   </div>

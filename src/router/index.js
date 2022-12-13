@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Layout from '../layout/Index.vue'
-
+import Energy from '../views/Energy.vue'
 const routes = [
   {
     path: '/',
@@ -34,7 +34,7 @@ const routes = [
     }, {
       path: '/energy',
       name: 'Energy',
-      component: () => import('../views/Energy.vue'),
+      component: Energy,
       meta: {
         menuKey: [['6'], ['sub2']]
       }
